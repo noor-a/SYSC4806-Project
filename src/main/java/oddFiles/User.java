@@ -1,4 +1,4 @@
-package Application;
+package oddFiles;
 
 import javax.persistence.*;
 
