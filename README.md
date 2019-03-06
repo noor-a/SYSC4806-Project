@@ -26,9 +26,8 @@ whose reviews are overdue. The Reviewer can list the articles assigned to him/he
  Current Progress:
  ------------------
  * Milestone 1
-    * dfdf
-    * dfdfdfd
-    * dfsafdsdfa
+    * Work on login and sign up page
+    * Work on file upload
  
  
  Milestones
