@@ -35,4 +35,4 @@ whose reviews are overdue. The Reviewer can list the articles assigned to him/he
  ---------------
  | Milestone | Title | Description |
  |-----------|-------|-------------|
- |     1     | Early Prototype | Users are able to upload a file. |
+ |     1     | Early Prototype | $$$$$$$$ |
