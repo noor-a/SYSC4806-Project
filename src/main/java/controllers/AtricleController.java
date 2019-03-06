@@ -25,7 +25,7 @@ public class AtricleController {
     public String fileUpload(@RequestParam("file")MultipartFile file, RedirectAttributes redirectAttributes){
         if(file.isEmpty()){
             redirectAttributes.addFlashAttribute("message", "Empty File. Cannot upload");
-            return "redirect:/uploadStatus";
+            return "uploadStatus";
         }
 
         try{
@@ -36,7 +36,7 @@ public class AtricleController {
         }catch (IOException e){
             e.printStackTrace();
         }
-        return "redirect:/uploadStatus";
+        return "uploadStatus";
     }
 
     @GetMapping("/uploadStatus")
