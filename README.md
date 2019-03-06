@@ -12,7 +12,7 @@ Group Members:
 
 Project Description:
 ----------------------------
-#####_**Artical Sumbmission and Reivew System**_
+#####_**Article Submission and Review System**_
 Article Submitter submits Article (some attachment, any format is ok).
 The Editor assigns the article to a Reviewer, and provides a deadline for 
 submission of the review. The Reviewer submits a Review of the article. 
