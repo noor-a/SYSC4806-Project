@@ -23,6 +23,7 @@ public class UserController {
         return "register";
     }
 
+    //creates a user object
     @PostMapping(value="/createUser")
     public String createUser(@RequestParam("firstName") String firstName,
                                 @RequestParam("lastName") String lastName,
