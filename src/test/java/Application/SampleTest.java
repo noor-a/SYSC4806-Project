@@ -24,7 +24,7 @@ public class SampleTest {
 
     @Test
     public void shouldReturnDefaultMessage() throws Exception {
-        this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("Sample Test")));
+        this.mockMvc.perform(get("/home")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("Welcome")));
     }
 }

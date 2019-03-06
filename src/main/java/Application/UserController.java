@@ -1,15 +1,22 @@
 package Application;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
 
-    @RequestMapping("/")
-    public @ResponseBody String SampleUser() {
-        return "Sample Test";
+    @GetMapping("/register")
+    public String index(Model model) {
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String addUser(@ModelAttribute User user, Model model) {
+
+        model.addAttribute("newUser", new User());
+        return "register";
     }
 
 }
