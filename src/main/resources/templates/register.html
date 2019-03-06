@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
 </head>
 <body>
 <h2>Register</h2>
-<form id="registerform">
+<form id="registerform" th:action="@{/createUser}">
     First Name: <input type="text" id="registerFirstName"> <br>
     Last Name: <input type="text" id="registerLastName"> <br>
     Email: <input type="text" id="registerEmail"> <br>
