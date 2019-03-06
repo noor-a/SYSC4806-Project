@@ -1,4 +1,4 @@
-# SYSC 4806 Project  ![Build Status](https://travis-ci.com/noor-a/SYSC4806Project.svg?branch=master)
+# SYSC 4806 Project  ![Build models.Status](https://travis-ci.com/noor-a/SYSC4806Project.svg?branch=master)
 
 [Heroku Link](https://sysc-4806project.herokuapp.com/)
 
