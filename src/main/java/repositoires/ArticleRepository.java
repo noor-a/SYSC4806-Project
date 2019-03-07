@@ -9,4 +9,5 @@ import java.util.List;
 public interface ArticleRepository {
     List<Article> findById();
     List<Article> findAll();
+    Article save(Article article);
 }
