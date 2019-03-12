@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 public class ReviewerEntity extends UserEntity {
-    List<Article> assignedArticles;
+    List<ArticleEntity> assignedArticles;
 
     public void wrtieReview(){
 

@@ -5,7 +5,7 @@ import java.util.*;
 
 @Entity
 public class SubmitterEntity extends UserEntity {
-    List<Article> submittedArticles;
+    List<ArticleEntity> submittedArticles;
 
     public SubmitterEntity(){
 
