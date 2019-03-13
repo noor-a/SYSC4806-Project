@@ -1,4 +1,4 @@
-package oddFiles;
+package models;
 
 import javax.persistence.*;
 

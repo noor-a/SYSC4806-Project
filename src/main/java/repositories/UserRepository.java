@@ -1,12 +1,8 @@
 package repositories;
 
-import models.UserEntity;
-import org.springframework.stereotype.Repository;
+import models.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
-@Repository
-public interface UserRepository {
-    List<UserEntity> findAll();
-    UserEntity findByUsername(String username);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByUsername(String username);
 }
