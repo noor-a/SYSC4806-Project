@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -6,7 +7,7 @@
 <body>
 <div>
     <!--Creates a basic html form to upload the file-->
-    <form action="/uploadForm" method="POST" enctype="multipart/form-data">
+    <form th:action="@{/uploadForm}" method="POST" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>Select a file to upload:</td>

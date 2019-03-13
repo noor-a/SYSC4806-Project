@@ -13,8 +13,6 @@ public class ArticleEntity {
     private Long id;
 
     private String title;
-    private SubmitterEntity submitter;
-    private ReviewerEntity reviewer;
     public Status status;
     public Date deadline;
 
@@ -42,19 +40,4 @@ public class ArticleEntity {
         this.id = id;
     }
 
-    public SubmitterEntity getSubmitter() {
-        return submitter;
-    }
-
-    public void setSubmitter(SubmitterEntity submitter) {
-        this.submitter = submitter;
-    }
-
-    public ReviewerEntity getReviewer() {
-        return reviewer;
-    }
-
-    public void setReviewer(ReviewerEntity reviewer) {
-        this.reviewer = reviewer;
-    }
 }

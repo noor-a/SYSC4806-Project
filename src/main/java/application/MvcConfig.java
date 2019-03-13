@@ -1,4 +1,4 @@
-package Application;
+package application;
 
 
 import org.springframework.context.annotation.Configuration;
@@ -12,6 +12,7 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/home").setViewName("home");
         registry.addViewController("/").setViewName("home");
         registry.addViewController("/login").setViewName("login");
+        registry.addViewController("/uploadFile").setViewName("uploadFile");
         registry.addViewController("/register").setViewName("register");
         registry.addViewController("/createUser").setViewName("createUser");
     }

@@ -19,16 +19,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Controller
-public class AtricleController {
+public class ArticleController {
     private static String UPLOAD_FOLDER = "/uploadTemp/";
 
     @Autowired
     ArticleRepository articleRepository;
 
-    @GetMapping("/")
-    public String index(){
-        return "uploadForm";
-    }
 
     @PostMapping("/uploadForm")
     public String fileUpload(@RequestParam("file")MultipartFile file, RedirectAttributes redirectAttributes, Model model){
@@ -40,11 +36,14 @@ public class AtricleController {
         try{
             byte[]bytes = file.getBytes();
             Path path = Paths.get(UPLOAD_FOLDER + file.getOriginalFilename());
+
+            //Converts MultiPartFile into File
             File f = new File(file.getOriginalFilename());
             f.createNewFile();
             FileOutputStream fos = new FileOutputStream(f);
             fos.write(file.getBytes());
             fos.close();
+
             Files.write(path, bytes);
             model.addAttribute("article", new ArticleEntity(f));
             articleRepository.save(new ArticleEntity(f));
