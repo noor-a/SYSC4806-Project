@@ -1,0 +1,5 @@
+
+@13/03/2019
+- When creating a new html page, be sure to add it to WebSecurityConfig.java to give it access. At is on line 20 following
+the examples.
+-Link broken for uploadForm from home.html. Needs to be fixed.
