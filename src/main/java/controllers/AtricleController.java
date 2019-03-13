@@ -25,7 +25,6 @@ public class AtricleController {
     @Autowired
     ArticleRepository articleRepository;
 
-
     @GetMapping("/")
     public String index(){
         return "uploadForm";
