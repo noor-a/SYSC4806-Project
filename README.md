@@ -31,6 +31,8 @@ whose reviews are overdue. The Reviewer can list the articles assigned to him/he
     * Finish login and authenication
     * Upload user documents
     * View all user documents
+    
+  ![XML](https://github.com/noor-a/SYSC4806Project/tree/register-pages/image.png)
  
  
  Milestones
