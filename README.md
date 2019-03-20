@@ -29,9 +29,12 @@ whose reviews are overdue. The Reviewer can list the articles assigned to him/he
     * Work on login and sign up page
     * Work on file upload
  
+ * Milestone 2
+    * Worked on view uploaded files, and adding submitter features
  
  Milestones
  ---------------
  | Milestone | Title | Description |
  |-----------|-------|-------------|
  |     1     | Early Prototype | $$$$$$$$ |
+ |     2     | Beta Stage      | $$$$$$$$$|

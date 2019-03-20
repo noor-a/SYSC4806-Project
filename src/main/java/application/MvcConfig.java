@@ -17,7 +17,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
         //Pages for uploading and view articles
         registry.addViewController("/upload").setViewName("uploadForm");
-        registry.addViewController("/viewUploadedFiles").setViewName("uploadView");
+        registry.addViewController("/uploadView").setViewName("uploadView");
     }
 
 }
