@@ -9,18 +9,18 @@ import javax.persistence.OneToMany;
 public class Submitter extends User {
 
     @OneToMany(targetEntity=Article.class, mappedBy="submitter", fetch= FetchType.EAGER)
-    private List<Article> articles;
+    private List<Article> submittedArticles;
 
     public List<Article> getArticles() {
-        return articles;
+        return submittedArticles;
     }
 
     public void setArticles(List<Article> articles) {
-        this.articles = articles;
+        this.submittedArticles = articles;
     }
 
     public void addArticle(Article article){
-        this.articles.add(article);
+        this.submittedArticles.add(article);
     }
 
 }
