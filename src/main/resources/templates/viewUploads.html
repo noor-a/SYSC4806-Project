@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Uploaded Articles</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h2>Uploaded Articles</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Download</th>
+    </tr>
+    <tr th:each="article : ${ArticleRepository}">
+        <td th:text="${article.title}">N/A</td>
+        <td>
+            <button th:action=${"/viewUploads/"} + ${article.id} type="get">
+                Download</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
