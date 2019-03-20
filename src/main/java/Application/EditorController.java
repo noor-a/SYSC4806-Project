@@ -12,18 +12,18 @@ public class EditorController {
     UserRepository repository;
 
     //creates a user object
-    @RequestMapping(value = "/registerEditor", method = RequestMethod.GET)
+    @PostMapping(value = "/registerEditor")
     public String registerEditor(@RequestParam("username") String username,
                                  @RequestParam("password") String password,
                                  @RequestParam("firstName") String firstName,
                                  @RequestParam("lastName") String lastName,
                                  @RequestParam("email") String email) {
-        User e = new User();
+        Editor e = new Editor();
         e.setUsername(username);
         e.setPassword(password);
         e.setFirstName(firstName);
         e.setLastName(lastName);
-        e.setUsername(email);
+        e.setEmail(email);
         repository.save(e);
         return "home";
     }

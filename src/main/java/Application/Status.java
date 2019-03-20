@@ -1,8 +1,8 @@
-package application;
+package Application;
 
 public enum Status {
 
-    SUMBITRED,
+    SUBMITTED,
     IN_REVIEW,
     ACCEPTED,
     REJECTED
