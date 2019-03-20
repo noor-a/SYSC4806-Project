@@ -64,9 +64,8 @@ public class ArticleController {
         Article a = new Article();
         a.setTitle(file.getOriginalFilename());
         a.setFile(convFile);
-//        a.setStatus(Status.SUMBITRED);
+        a.setStatus(Status.SUMBITTED);
         articleRepository.save(a);
-//        return "uploadView";
         return "uploadView";
     }
 

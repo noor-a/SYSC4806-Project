@@ -13,6 +13,7 @@ public class Article {
     private String title;
 
     private String review;
+    private Status status;
     private Boolean inProgress;
     private Boolean accepted;
     private Date deadline;
@@ -66,6 +67,12 @@ public class Article {
         this.file = file;
     }
 
-    
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 }

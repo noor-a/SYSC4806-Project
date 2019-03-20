@@ -2,7 +2,7 @@ package Application;
 
 public enum Status {
 
-    SUMBITRED,
+    SUMBITTED,
     IN_REVIEW,
     ACCEPTED,
     REJECTED
