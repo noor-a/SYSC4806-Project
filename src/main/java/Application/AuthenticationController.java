@@ -34,6 +34,7 @@ public class AuthenticationController {
             model.addAttribute("message", "User not found");
             return "loginFailed";
         }
+        
         User u = users.get(0);
         if(u.getPassword().equals(password)){
             repository.save(u);
