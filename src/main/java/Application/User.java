@@ -9,6 +9,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private String cookie;
+
     @Column(unique = true)
     private String username;
 
@@ -26,6 +28,14 @@ public class User {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(String cookie) {
+        this.cookie = cookie;
     }
 
     public String getUsername() {
