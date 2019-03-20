@@ -1,19 +1,24 @@
 package controllers;
 
-import models.ArticleEntity;
+import models.Article;
+import models.Status;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import repositories.ArticleRepository;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ArticleController {
@@ -22,42 +27,31 @@ public class ArticleController {
     @Autowired
     ArticleRepository articleRepository;
 
-    @RequestMapping("/upload")
-    public String uploadPage(Model model){
+    @RequestMapping(value="/upload", method = RequestMethod.GET)
+    public String uploadHandler(Model model){
+
+        return "uploadForm";
+    }
+
+    @RequestMapping(value="/upload", method = RequestMethod.POST)
+    public String submit(@RequestParam("file") MultipartFile file, Model model){
+        model.addAttribute("file", file);
+
+        //Creates a new article with the file and saves it to the repository
+        Article a = new Article();
+        a.setUploadFile(file);
+        a.setStatus(Status.SUMBITRED);
+        articleRepository.save(a);
         return "uploadView";
     }
 
-    @RequestMapping("/upload")
-    public String fileUpload(Model model, @RequestParam("file") MultipartFile file){
-        StringBuilder fileNames = new StringBuilder();
-        StringBuilder fileNamesFail = new StringBuilder();
-        if(!file.isEmpty()) {
-            Path fileNameAndPath = Paths.get(UPLOAD_DIR, file.getOriginalFilename());
-            try {
-                Files.write(fileNameAndPath, file.getBytes());
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                fileNamesFail.append(file.getOriginalFilename());
-                model.addAttribute("msg", "Filed to upload file(s):  "+ fileNames.toString());
-                return "uploadStatus";
-            }
-            fileNames.append(file.getOriginalFilename());
-            model.addAttribute("msg", "Successfully Uploaded file: "+ fileNames.toString());
-            model.addAttribute("article", new ArticleEntity(file));
-            return "uploadStatus";
-        }
-        model.addAttribute("msg", "Failed upload empty file: "+ fileNames.toString());
-        return "uploadStatus";
+    @GetMapping("/uploadView")
+    public String getUploadedFiles(){
+        return "uploadView";
     }
 
-    @RequestMapping("/success")
-    public @ResponseBody String successUpload() {
-        return "File successfully Uploaded";
+    //Gets Returns all articles that have been uploaaded
+    public List<Article> getAllArticles(){
+        return articleRepository.findAll();
     }
-
-    /*@RequestMapping(method = RequestMethod.GET, path="/download")
-    public ResponseEntity<Resource> downloadFile(String param){
-
-    }*/
 }

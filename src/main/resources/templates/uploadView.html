@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <h5>Select a file to upload: </h5>
-        <input type="file" name="files" multiple>
-        <br>
-        <input type="submit" value="Upload Files">
-    </form>
+
+<h2>Uploaded Article</h2>
+<br>
+<table>
+    <tr>
+        <td>File name: </td>
+        <td>${file.originalFilename}</td>
+    </tr>
+    <tr>
+        <td>Type: </td>
+        <td>${file.contentType}</td>
+    </tr>
+</table>
 
 </body>
 </html>

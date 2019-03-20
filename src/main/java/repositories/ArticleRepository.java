@@ -1,10 +1,10 @@
 package repositories;
 
-import models.ArticleEntity;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import models.Article;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@RepositoryRestResource(collectionResourceRel = "article", path = "article")
-public interface ArticleRepository extends CrudRepository<ArticleEntity, Long> {
+@Repository
+public interface ArticleRepository extends JpaRepository<Article, Long> {
 
 }
