@@ -1,12 +1,12 @@
 package Application;
 
-import jdk.net.SocketFlow;
 import org.junit.Before;
 import org.junit.Test;
+
 import java.io.File;
 import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class ArticleTest {
     Article a;
@@ -17,7 +17,6 @@ public class ArticleTest {
     public void setUp() throws Exception {
         a = new Article();
         f = new File("test.txt");
-        d = new Date("file");
         a.setFile(f);
         a.setStatus(Status.SUMBITTED);
         a.setTitle("Test");
@@ -33,26 +32,6 @@ public class ArticleTest {
     public void setTitle() {
         a.setTitle("change");
         assertEquals(a.getTitle(), "change");
-    }
-
-    @Test
-    public void getReview() {
-    }
-
-    @Test
-    public void setReview() {
-    }
-
-    @Test
-    public void getDeadline() {
-        assertEquals(a.getDeadline(), d);
-    }
-
-    @Test
-    public void setDeadline() {
-        Date d = new Date("sunday");
-        a.setDeadline(d);
-        assertEquals(a.getDeadline(), d);
     }
 
     @Test
