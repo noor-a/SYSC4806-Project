@@ -27,7 +27,10 @@ whose reviews are overdue. The Reviewer can list the articles assigned to him/he
  ------------------
  * Milestone 1
     * Work on login and sign up page
-    * Work on file upload
+ * Milestone 2
+    * Finish login and authenication
+    * Upload user documents
+    * View all user documents
  
  
  Milestones
