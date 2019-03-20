@@ -25,7 +25,6 @@ public class SubmitterController {
         e.setLastName(lastName);
         e.setUsername(email);
         repository.save(e);
-        System.out.println("S");
         return "home";
     }
 

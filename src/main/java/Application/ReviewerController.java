@@ -25,7 +25,6 @@ public class ReviewerController {
         e.setLastName(lastName);
         e.setUsername(email);
         repository.save(e);
-        System.out.println("R");
         return "home";
     }
 
