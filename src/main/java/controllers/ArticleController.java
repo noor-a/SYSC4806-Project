@@ -29,7 +29,7 @@ public class ArticleController {
 
     @RequestMapping(value="/upload", method = RequestMethod.POST)
     public String submit(@RequestParam("file") MultipartFile file, Model model){
-        model.addAttribute("file", file);
+        model.addAttribute("file", file);//Adds to the model
 
         //Creates a new article with the file and saves it to the repository
         Article a = new Article();
