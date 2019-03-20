@@ -9,13 +9,20 @@
 <form action="#" th:action="@{/}">
     <input class="home_button" type="submit" value  = "HOME"/>
 </form>
-<form action="#" th:action="@{/registerEditor}">
+<form action="POST" th:action="@{/createUser}">
     <label>Username: </label><input type="text" th:name="username" th:value="*{username}" /><br/>
     <label>Password: </label><input type="password" th:name="password" th:value="*{password}" /><br/>
     <label>First Name: </label><input type="text" th:name="firstName" th:value="*{firstName}" /><br/>
     <label>Last Name: </label><input type="text" th:name="lastName" th:value="*{lastName}" /><br/>
     <label>Email: </label><input type="text" th:name="email" th:value="*{email}" /><br/>
-
+	<label>Type: </label>
+	
+	<select id="type" th:name="type">
+		<option value="submitter">Submitter</option>
+		<option value="editor">Editor</option>
+		<option value="reviewer">Reviewer</option>
+	</select>
+	<input type="hidden" name="_type" value="1"/>
     <input class="bottom_button" type="submit" value="Create" />
 </form>
 </body>

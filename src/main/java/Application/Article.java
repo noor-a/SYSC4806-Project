@@ -18,12 +18,6 @@ public class Article {
     private Date deadline;
     private File file;
 
-    @ManyToOne
-    private Reviewer reviewer;
-
-    @ManyToOne
-    private Submitter submitter;
-
     public String getTitle() {
         return title;
     }
@@ -72,20 +66,6 @@ public class Article {
         this.file = file;
     }
 
-    public Reviewer getReviewer() {
-        return reviewer;
-    }
-
-    public void setReviewer(Reviewer reviewer) {
-        this.reviewer = reviewer;
-    }
-
-    public Submitter getSubmitter() {
-        return submitter;
-    }
-
-    public void setSubmitter(Submitter submitter) {
-        this.submitter = submitter;
-    }
+    
 
 }

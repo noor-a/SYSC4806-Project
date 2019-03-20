@@ -20,8 +20,6 @@ public class User {
 
     private String email;
     
-    private String type;//This should either ve "editor", "reviewer" or "submitter"
-
     private String type; //This should either be "editor", "reviewer", or "submitter"
 
     public long getId() {
@@ -80,12 +78,5 @@ public class User {
         this.type = type;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
 }
