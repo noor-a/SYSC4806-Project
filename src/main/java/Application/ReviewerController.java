@@ -12,19 +12,19 @@ public class ReviewerController {
     UserRepository repository;
 
     //creates a user object
-    @RequestMapping(value = "/registerReviewer", method = RequestMethod.GET)
+    @PostMapping(value = "/registerReviewer")
     public String registerEditor(@RequestParam("username") String username,
                                  @RequestParam("password") String password,
                                  @RequestParam("firstName") String firstName,
                                  @RequestParam("lastName") String lastName,
                                  @RequestParam("email") String email) {
-        User e = new User();
-        e.setUsername(username);
-        e.setPassword(password);
-        e.setFirstName(firstName);
-        e.setLastName(lastName);
-        e.setUsername(email);
-        repository.save(e);
+        Reviewer r = new Reviewer();
+        r.setUsername(username);
+        r.setPassword(password);
+        r.setFirstName(firstName);
+        r.setLastName(lastName);
+        r.setEmail(email);
+        repository.save(r);
         return "home";
     }
 

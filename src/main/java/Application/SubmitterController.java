@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class SubmitterController {
 
@@ -12,19 +14,19 @@ public class SubmitterController {
     UserRepository repository;
 
     //creates a user object
-    @RequestMapping(value = "/registerSubmitter", method = RequestMethod.GET)
-    public String registerEditor(@RequestParam("username") String username,
+    @PostMapping("/registerSubmitter")
+    public String registerSubmitter(@RequestParam("username") String username,
                                  @RequestParam("password") String password,
                                  @RequestParam("firstName") String firstName,
                                  @RequestParam("lastName") String lastName,
                                  @RequestParam("email") String email) {
-        User e = new User();
-        e.setUsername(username);
-        e.setPassword(password);
-        e.setFirstName(firstName);
-        e.setLastName(lastName);
-        e.setUsername(email);
-        repository.save(e);
+        Submitter s = new Submitter();
+        s.setUsername(username);
+        s.setPassword(password);
+        s.setFirstName(firstName);
+        s.setLastName(lastName);
+        s.setEmail(email);
+        repository.save(s);
         return "home";
     }
 
