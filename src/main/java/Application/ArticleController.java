@@ -22,7 +22,6 @@ import java.util.List;
 
 @Controller
 public class ArticleController {
-    public static String UPLOAD_DIR = System.getProperty("user.dir")+"/uploads";
 
     @Autowired
     ArticleRepository articleRepository;
