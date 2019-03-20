@@ -27,11 +27,11 @@ public class ArticleController {
     @RequestMapping(value = "/viewUploads/{title}", method = RequestMethod.GET)
     @ResponseBody
     public FileSystemResource getFile(@PathVariable("title") String title) {
-        return new FileSystemResource(articleRepository.findByTitle(title).get(0).getFile()); 
+        return new FileSystemResource(articleRepository.findByTitle(title).get(0).getFile());
     }
     @GetMapping("/viewUploads")
     public String viewUploads(Model model){
-    	model.addAttribute("articles", articleRepository.findAll());
+        model.addAttribute("articles", articleRepository.findAll());
         return "viewUploads";
     }
 
@@ -48,19 +48,19 @@ public class ArticleController {
         //Creates a new article with the file and saves it to the repository
         File convFile = new File(file.getOriginalFilename());
         try {
-        convFile.createNewFile(); 
-        FileOutputStream fos;
-		
-			fos = new FileOutputStream(convFile);
-		
-        fos.write(file.getBytes());
-        fos.close(); 
+            convFile.createNewFile();
+            FileOutputStream fos;
+
+            fos = new FileOutputStream(convFile);
+
+            fos.write(file.getBytes());
+            fos.close();
         } catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} 
-        
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         Article a = new Article();
         a.setTitle(file.getOriginalFilename());
         a.setFile(convFile);
