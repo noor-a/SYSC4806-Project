@@ -5,15 +5,22 @@
 <h2>Uploaded Article</h2>
 <br>
 <table>
-    <tr>
-        <td>File name: </td>
-        <td>${file.originalFilename}</td>
-    </tr>
-    <tr>
-        <td>Type: </td>
-        <td>${file.contentType}</td>
-    </tr>
+	<c:forEach items="${file}" var ="file">
+	    <tr>
+	        <td>File name: </td>
+	        <td th:text="${file.originalFilename}">N/A</td>
+	    </tr>
+	    <tr>
+	        <td>Type: </td>
+	        <td th:text="${file.contentType}">N/A</td>
+	    </tr>
+	</c:forEach>
 </table>
+<form action="/viewUploads">
+	<input type="submit" value="View all uploads">
+</form>
+<br>
+<a th:href="@{/mainMenu}"><button type="button" id="Button">Main Menu</button></a>
 
 </body>
 </html>

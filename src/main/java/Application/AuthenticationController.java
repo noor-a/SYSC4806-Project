@@ -37,7 +37,7 @@ public class AuthenticationController {
         User u = users.get(0);
         if(u.getPassword().equals(password)){
             repository.save(u);
-            return "home";
+            return "mainMenu";
         } else {
             model.addAttribute("message", "Password incorrect");
             return "loginFailed";
@@ -55,6 +55,11 @@ public class AuthenticationController {
     @RequestMapping(value="/logins",method=RequestMethod.GET)
     public String logins(){
         return "login";
+    }
+    
+    @RequestMapping(value="/mainMenu",method=RequestMethod.GET)
+    public String mainMenu(){
+        return "mainMenu";
     }
 
 

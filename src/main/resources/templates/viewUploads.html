@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<h2>Uploaded Articles</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Download</th>
+    </tr>
+    <tr th:if="${articles.empty}">
+        <td colspan="2"> No articles Available </td>
+    </tr>
+    <tr th:each="article : ${articles}">
+        <td><span th:text="${article.title}"> Title </span></td>
+        <td>
+            <form th:action="@{/viewUploads/__${article.title}__}">
+                <button>Download</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<br>
+<a th:href="@{/mainMenu}"><button type="button" id="Button">Main Menu</button></a>
+</body>
+</html>

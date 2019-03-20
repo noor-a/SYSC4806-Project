@@ -13,16 +13,11 @@ public class Article {
     private String title;
 
     private String review;
+    private Status status;
     private Boolean inProgress;
     private Boolean accepted;
     private Date deadline;
     private File file;
-
-    @ManyToOne
-    private Reviewer reviewer;
-
-    @ManyToOne
-    private Submitter submitter;
 
     public String getTitle() {
         return title;
@@ -72,20 +67,12 @@ public class Article {
         this.file = file;
     }
 
-    public Reviewer getReviewer() {
-        return reviewer;
+
+    public Status getStatus() {
+        return status;
     }
 
-    public void setReviewer(Reviewer reviewer) {
-        this.reviewer = reviewer;
+    public void setStatus(Status status) {
+        this.status = status;
     }
-
-    public Submitter getSubmitter() {
-        return submitter;
-    }
-
-    public void setSubmitter(Submitter submitter) {
-        this.submitter = submitter;
-    }
-
 }

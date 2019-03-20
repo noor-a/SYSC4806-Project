@@ -19,6 +19,8 @@ public class User {
     private String lastName;
 
     private String email;
+    
+    private String type; //This should either be "editor", "reviewer", or "submitter"
 
     public long getId() {
         return id;
@@ -67,5 +69,14 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 
 }
