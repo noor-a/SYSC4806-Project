@@ -23,6 +23,12 @@ public class ArticleController {
     @Autowired
     ArticleRepository articleRepository;
 
+    @RequestMapping(value = "/viewUploads/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public FileSystemResource getFile(@PathVariable("id") int id) {
+        return new FileSystemResource(articleRepository.findOne(id).getFile());
+    }
+
     @RequestMapping(value="/upload", method = RequestMethod.GET)
     public String uploadHandler(Model model){
 
