@@ -1,15 +1,11 @@
 package Application;
 
-import models.Article;
-import models.Status;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import repositories.ArticleRepository;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,11 +34,12 @@ public class ArticleController {
         model.addAttribute("file", file);
 
         //Creates a new article with the file and saves it to the repository
-        Article a = new Article();
-        a.setUploadFile(file);
-        a.setStatus(Status.SUMBITRED);
-        articleRepository.save(a);
-        return "uploadView";
+//        Article a = new Article();
+//        a.setUploadFile(file);
+//        a.setStatus(Status.SUMBITRED);
+//        articleRepository.save(a);
+//        return "uploadView";
+        return null;
     }
 
     @GetMapping("/uploadView")
